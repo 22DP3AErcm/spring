@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class DefaultController {
@@ -12,4 +13,21 @@ public class DefaultController {
     String index(@RequestParam(name="name", required=false, defaultValue="null") String name, Model model) {
         return "index";
     }
+    @GetMapping(value = "/about")
+    ModelAndView about(){
+        ModelAndView modelAndView = new ModelAndView("about");
+        return modelAndView;
+    }
+    @GetMapping(value = "/test")
+    ModelAndView test(){
+        ModelAndView test = new ModelAndView("test"); 
+        
+        Money money = new Money(2, (byte) 20);
+        Money Addition = new Money(2);
+
+        test.addObject("result", "Resultāts: " + money.plus(Addition));
+
+        return test;
+    }
+    
 }
