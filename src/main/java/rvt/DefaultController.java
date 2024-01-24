@@ -22,10 +22,10 @@ public class DefaultController {
     ModelAndView test(){
         ModelAndView test = new ModelAndView("test"); 
         
-        Money money = new Money(2, (byte) 20);
-        Money Addition = new Money(2);
+        Money money = new Money((byte) 20);
+        
 
-        test.addObject("result", "Resultāts: " + money.plus(Addition));
+        test.addObject("result", "Rezultāts: " + money.plus((byte) 20));
 
         return test;
     }
