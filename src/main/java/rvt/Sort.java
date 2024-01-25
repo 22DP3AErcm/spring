@@ -45,7 +45,7 @@ public class Sort {
         array[index2] = first;
         
     }
-    public static void sort(int[] array) {
+    public static int[] sort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int smallest = indexOfSmallestFrom(array, i);
             swap(array, i, smallest);

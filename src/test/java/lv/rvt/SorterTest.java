@@ -42,7 +42,7 @@ public class SorterTest {
     @Test
     public void sort() {
         int[] array = { 8, 3, 7, 9, 1, 2, 4 };
-        Sort.sort(array);
+        
         assertEquals(1, array[0]);
         assertEquals(2, array[1]);
         assertEquals(3, array[2]);
