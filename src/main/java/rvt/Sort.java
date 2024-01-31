@@ -45,11 +45,13 @@ public class Sort {
         array[index2] = first;
         
     }
-    public static int[] sort(int[] array) {
+    public static void sort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int smallest = indexOfSmallestFrom(array, i);
             swap(array, i, smallest);
+            System.out.println(array);
         }
+        
     }
 
 }
