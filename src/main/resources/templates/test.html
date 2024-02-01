@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-<form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-  </form>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>User Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/Static/css/register.css">
+  </head>
+  <div align="center">
+    <h1>User Register</h1>
+    <form>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br>
+  
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email"><br>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br>
+  
+      <label for="birthday">Birthday(dd-mm-yyyy):</label>
+      <input type="date" id="birthday" name="birthday"><br>
+  
+      <label for="groups">Groups:</label>
+      <select id="groups" name="groups">
+          <option value="group1">DP2-1</option>
+          <option value="group2">DP2-2</option>
+          <option value="group3">DP2-3</option>
+          <option value="group4">DP2-4</option><br>
+      </select><br>
+  
+    <label for="gender">Gender:</label>
+    <input type="radio" id="gender" name="gender" value="Male">Male
+    <input type="radio" id="gender" name="gender" value="Female">Female<br>
+    
+  
+      <label for="married">Married?</label>
+      <input type="checkbox" id="married" name="married"><br>
+  
+      <label for="note">Note:</label>
+      <textarea id="note" name="note" rows="4" cols="50"></textarea><br>
+  
+      <input type="submit" value="Register">
+    </form>
+  </div>
 </html>
