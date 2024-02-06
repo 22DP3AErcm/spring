@@ -8,21 +8,21 @@
   </head>
   <div align="center">
     <h1>User Register</h1>
-    <form>
+    <form method="post" th:action="@{/test}" th:object="${user}">
       <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname"><br>
+      <input type="text" th:field="*{name}" id="fname" name="fname"><br>
   
       <label for="email">Email:</label>
-      <input type="text" id="email" name="email"><br>
+      <input type="text" th:field="*{email}" id="email" name="email"><br>
   
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password"><br>
+      <input type="password" th:field="*{password}" id="password" name="password"><br>
   
       <label for="birthday">Birthday(dd-mm-yyyy):</label>
-      <input type="date" id="birthday" name="birthday"><br>
+      <input type="date" id="birthday" th:field="*{birthday}" name="birthday"><br>
   
       <label for="groups">Groups:</label>
-      <select id="groups" name="groups">
+      <select id="groups" th:field="*{groups}" name="groups">
           <option value="group1">DP2-1</option>
           <option value="group2">DP2-2</option>
           <option value="group3">DP2-3</option>
@@ -30,15 +30,15 @@
       </select><br>
   
     <label for="gender">Gender:</label>
-    <input type="radio" id="gender" name="gender" value="Male">Male
-    <input type="radio" id="gender" name="gender" value="Female">Female<br>
+    <input type="radio" id="gender" th:field="*{gender}" name="gender" value="Male">Male
+    <input type="radio" id="gender" name="gender" th:field="*{gender}" value="Female">Female<br>
     
   
       <label for="married">Married?</label>
-      <input type="checkbox" id="married" name="married"><br>
+      <input type="checkbox" id="married" th:field="*{married}" name="married"><br>
   
       <label for="note">Note:</label>
-      <textarea id="note" name="note" rows="4" cols="50"></textarea><br>
+      <textarea id="note" name="note" th:field="*{note}" rows="4" cols="50"></textarea><br>
   
       <input type="submit" value="Register">
     </form>
