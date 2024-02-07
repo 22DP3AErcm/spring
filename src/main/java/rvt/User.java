@@ -37,7 +37,7 @@ public class User {
     @Email
     private String email;
 
-    private String group;
+    private String groups;
 
    
     public String toString() {
@@ -52,6 +52,6 @@ public class User {
                 this.married,
                 this.note,
                 this.email,
-                this.group);
+                this.groups);
     }
 }

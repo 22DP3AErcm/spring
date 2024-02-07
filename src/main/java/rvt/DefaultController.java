@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,11 +32,11 @@ public class DefaultController {
         return modelAndView;
     }
     @PostMapping(value = "/test")
-    public ModelAndView test1(@ModelAttribute("user") User user){
-        ModelAndView modelAndView = new ModelAndView("test"); 
-        System.out.println(user.getGroup());
-        System.out.println(user.getName());
-        return modelAndView;
+    public String test1(@ModelAttribute("user") User user, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "redirect:/test";
+        }
+        return "redirect:/success";
     }
 
     
