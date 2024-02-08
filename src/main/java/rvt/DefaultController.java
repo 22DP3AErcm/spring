@@ -2,6 +2,7 @@ package rvt;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,17 +27,25 @@ public class DefaultController {
         return modelAndView;
     }
     @GetMapping(value = "/test")
-    public ModelAndView test(@ModelAttribute("user") User user){
-        ModelAndView modelAndView = new ModelAndView("test"); 
+    public ModelAndView test(@RequestParam HashMap<String, String> allParams, User user){
         
+        if(allParams.containsKey("success")){
+            ModelAndView modelAndView = new ModelAndView("success"); 
+            return modelAndView;
+        }
+        ModelAndView modelAndView = new ModelAndView("test"); 
         return modelAndView;
     }
+
+
     @PostMapping(value = "/test")
     public String test1(@ModelAttribute("user") User user, BindingResult bindingResult){
+
+
         if (bindingResult.hasErrors()) {
-            return "redirect:/test";
+            return "/test";
         }
-        return "redirect:/success";
+        return "redirect:/test?success";
     }
 
     
