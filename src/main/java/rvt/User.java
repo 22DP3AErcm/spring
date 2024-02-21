@@ -19,7 +19,6 @@ public class User {
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Only letters are allowed")
     private String name;
 
-    
     private String surname;
 
     private int age;
