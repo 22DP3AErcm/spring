@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import rvt.Enumerated.Suit;
+
 import java.util.List;
 
 @Controller
@@ -40,16 +43,34 @@ public class DefaultController {
         // System.out.println(cd2);
         // System.out.println(cd3);
 
-        Box box = new Box(10);
+        // Box box = new Box(10);
 
-        box.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2)) ;
-        box.add(new Book("Robert Martin", "Clean Code", 1));
-        box.add(new Book("Kent Beck", "Test Driven Development", 0.5));
+        // box.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2)) ;
+        // box.add(new Book("Robert Martin", "Clean Code", 1));
+        // box.add(new Book("Kent Beck", "Test Driven Development", 0.5));
 
-        box.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
-        box.add(new CD("Wigwam", "Nuclear Nightclub", 1975));
-        box.add(new CD("Rendezvous Park", "Closer to Being Here", 2012));
-        System.out.println(box);
+        // box.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
+        // box.add(new CD("Wigwam", "Nuclear Nightclub", 1975));
+        // box.add(new CD("Rendezvous Park", "Closer to Being Here", 2012));
+        // System.out.println(box);
+
+        // Card first = new Card(10, Suit.HEART);
+
+        // System.out.println(first);
+
+        // if (first.getSuit() == Suit.SPADE) {
+        //     System.out.println("is a spade");
+        // } else {
+        //     System.out.println("is not a spade");
+        // }
+        // System.out.println(Suit.DIAMOND.ordinal());
+        // System.out.println(Suit.HEART.ordinal());
+
+        // System.out.println(Color.GREEN.getCode());
+        
+        getEducation anna = new getEducation("Anna", Education.PHD);
+        System.out.println(anna);
+
         return modelAndView;
     }
 
